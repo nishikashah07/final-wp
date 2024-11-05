@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - VacaNation</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Header */
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a, .destination-card a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .destination-card a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Destination Section */
+        .destination-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .destination-section h2 {
+            font-size: 32px;
+            color: #333;
+        }
+
+        .destination-section p {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        /* Filters */
+        .filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .filters select {
+            padding: 10px;
+            margin: 0 10px;
+            font-size: 16px;
+            border: 2px solid #54c571;
+            border-radius: 5px;
+        }
+
+        .filters button {
+            background-color: #54c571;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .filters button:hover {
+            background-color: #222;
+        }
+
+        /* Travel Destinations */
+        .destinations {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .destination-card {
+            width: 300px;
+            margin: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .destination-card:hover {
+            transform: scale(1.05);
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .destination-card h3 {
+            padding: 15px;
+            background-color: #54c571;
+            color: white;
+            margin: 0;
+        }
+
+        .destination-card p {
+            padding: 10px;
+            color: #333;
+        }
+
+        /* Solo Travelers */
+        .solo-travel {
+            text-align: center;
+            padding: 40px;
+            background-color: rgb(233, 230, 230);
+        }
+
+        .solo-travel h2 {
+            color: #333;
+        }
+
+        .solo-travel button {
+            background-color: #54c571;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .solo-travel button:hover {
+            background-color: #222;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>VacaNation</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html" class="active">Destinations</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="solo.html">Solo Traveler?</a></li>
+                <li><button id="logout-btn" style="display:none;" onclick="logout()">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Destination Section -->
+    <section class="destination-section">
+        <h2>Explore Your Next Destination</h2>
+        <p>Select your preferred state and season to discover top destinations and adventures in India.</p>
+
+        <!-- Filters Section -->
+        <div class="filters">
+            <select id="state">
+                <option value="">Select State</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="goa">Goa</option>
+                <option value="kerala">Kerala</option>
+                <option value="andhra">Andhra Pradesh</option>
+                <option value="odisha">Odisha</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="arunachal">Arunachal Pradesh</option>
+                <option value="assam">Assam</option>
+                <option value="bihar">Bihar</option>
+                <option value="chandigarh">Chandigarh</option>
+                <option value="chattisgarh">Chhattisgarh</option>
+                <option value="delhi">Delhi</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="haryana">Haryana</option>
+                <option value="himachal">Himachal Pradesh</option>
+                <option value="kashmir">Jammu & Kashmir</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="madhya">Madhya Pradesh</option>
+                <option value="manipur">Manipur</option>
+                <option value="meghalaya">Meghalaya</option>
+                <option value="mizoram">Mizoram</option>
+                <option value="nagaland">Nagaland</option>
+                <option value="punjab">Punjab</option>
+                <option value="sikkim">Sikkim</option>
+                <option value="tamilnadu">Tamil Nadu</option>
+                <option value="tripura">Tripura</option>
+                <option value="telangana">Telangana</option>
+                <option value="uttar">Uttar Pradesh</option>
+                <option value="uttarakhand">Uttarakhand</option>
+                <option value="bengal">West Bengal</option>
+                <option value="andaman">Andaman & Nicobar</option>
+                <option value="dadra">Dadra & Nagar Haveli</option>
+                <option value="daman">Daman & Diu</option>
+                <option value="lakshwadeep">Lakshadweep</option>
+                <option value="puducherry">Puducherry</option>
+            </select>
+
+            <select id="season">
+                <option value="">Select Season</option>
+                <option value="winter">Winter</option>
+                <option value="summer">Summer</option>
+                <option value="monsoon">Monsoon</option>
+            </select>
+
+            <button onclick="filterDestinations()">Explore</button>
+        </div>
+
+        <!-- Destinations -->
+        <div class="destinations">
+            <div class="destination-card" data-state="rajasthan" data-season="winter">
+                <a href="rajasthan.html">
+                    <img src="rajasthan.png" alt="Rajasthan">
+                    <h3>Rajasthan</h3>
+                    <p>Discover the rich cultural heritage and majestic palaces of Rajasthan. Perfect for a winter escape.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="goa" data-season="summer">
+                <a href="goa.html">
+                    <img src="goa.png" alt="Goa">
+                    <h3>Goa</h3>
+                    <p>Relax on the sandy beaches or enjoy adventure activities in the vibrant state of Goa during summer.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="kerala" data-season="monsoon">
+                <a href="kerala.html">
+                    <img src="kerala.png" alt="Kerala">
+                    <h3>Kerala</h3>
+                    <p>Immerse yourself in the serene backwaters and lush greenery of Kerala during monsoon.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="andhra" data-season="any">
+                <a href="andhra.html">
+                    <img src="andhra.png" alt="Andhra Pradesh">
+                    <h3>Andhra Pradesh</h3>
+                    <p>Explore the vibrant culture and diverse landscapes of Andhra Pradesh.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="odisha" data-season="any">
+                <a href="odisha.html">
+                    <img src="odisha.png" alt="Odisha">
+                    <h3>Odisha</h3>
+                    <p>Visit the ancient temples and stunning beaches of Odisha.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="maharashtra" data-season="any">
+                <a href="maharashtra.html">
+                    <img src="maharashtra.png" alt="Maharashtra">
+                    <h3>Maharashtra</h3>
+                    <p>Experience the bustling cities and beautiful landscapes of Maharashtra.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="arunachal" data-season="summer">
+                <a href="arunachal.html">
+                    <img src="arunachal.png" alt="Arunachal Pradesh">
+                    <h3>Arunachal Pradesh</h3>
+                    <p>Discover the natural beauty and rich culture of Arunachal Pradesh.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="assam" data-season="monsoon">
+                <a href="assam.html">
+                    <img src="assam.png" alt="Assam">
+                    <h3>Assam</h3>
+                    <p>Explore the tea gardens and wildlife of Assam during the monsoon.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="bihar" data-season="winter">
+                <a href="bihar.html">
+                    <img src="bihar.png" alt="Bihar">
+                    <h3>Bihar</h3>
+                    <p>Visit the historical sites and cultural landmarks of Bihar in winter.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="chandigarh" data-season="any">
+                <a href="chandigarh.html">
+                    <img src="chandigarh.png" alt="Chandigarh">
+                    <h3>Chandigarh</h3>
+                    <p>Experience the modern architecture and vibrant culture of Chandigarh.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="chattisgarh" data-season="any">
+                <a href="chhattisgarh.html">
+                    <img src="chhattisgarh.png" alt="Chhattisgarh">
+                    <h3>Chhattisgarh</h3>
+                    <p>Explore the lush forests and diverse wildlife of Chhattisgarh.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="delhi" data-season="winter">
+                <a href="delhi.html">
+                    <img src="delhi.png" alt="Delhi">
+                    <h3>Delhi</h3>
+                    <p>Experience the rich history and vibrant culture of India's capital city.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="gujarat" data-season="winter">
+                <a href="gujarat.html">
+                    <img src="gujarat.png" alt="Gujarat">
+                    <h3>Gujarat</h3>
+                    <p>Explore the rich heritage and beautiful landscapes of Gujarat in winter.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="haryana" data-season="any">
+                <a href="haryana.html">
+                    <img src="haryana.png" alt="Haryana">
+                    <h3>Haryana</h3>
+                    <p>Discover the rural charm and historical sites of Haryana.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="himachal" data-season="winter">
+                <a href="himachal.html">
+                    <img src="himachal.png" alt="Himachal Pradesh">
+                    <h3>Himachal Pradesh</h3>
+                    <p>Enjoy the breathtaking mountains and beautiful landscapes of Himachal Pradesh in winter.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="kashmir" data-season="winter">
+                <a href="kashmir.html">
+                    <img src="kashmir.png" alt="Jammu & Kashmir">
+                    <h3>Jammu & Kashmir</h3>
+                    <p>Experience the stunning beauty and serene landscapes of Jammu & Kashmir during winter.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="karnataka" data-season="any">
+                <a href="karnataka.html">
+                    <img src="karnataka.png" alt="Karnataka">
+                    <h3>Karnataka</h3>
+                    <p>Explore the cultural heritage and natural beauty of Karnataka.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="madhya" data-season="any">
+                <a href="madhya.html">
+                    <img src="madhya.png" alt="Madhya Pradesh">
+                    <h3>Madhya Pradesh</h3>
+                    <p>Visit the stunning temples and wildlife of Madhya Pradesh.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="manipur" data-season="any">
+                <a href="manipur.html">
+                    <img src="manipur.png" alt="Manipur">
+                    <h3>Manipur</h3>
+                    <p>Discover the rich culture and beautiful landscapes of Manipur.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="meghalaya" data-season="any">
+                <a href="meghalaya.html">
+                    <img src="meghalaya.png" alt="Meghalaya">
+                    <h3>Meghalaya</h3>
+                    <p>Experience the living root bridges and stunning scenery of Meghalaya.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="mizoram" data-season="any">
+                <a href="mizoram.html">
+                    <img src="mizoram.png" alt="Mizoram">
+                    <h3>Mizoram</h3>
+                    <p>Explore the serene landscapes and rich culture of Mizoram.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="nagaland" data-season="any">
+                <a href="nagaland.html">
+                    <img src="nagaland.png" alt="Nagaland">
+                    <h3>Nagaland</h3>
+                    <p>Discover the unique traditions and beautiful landscapes of Nagaland.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="punjab" data-season="any">
+                <a href="punjab.html">
+                    <img src="punjab.png" alt="Punjab">
+                    <h3>Punjab</h3>
+                    <p>Experience the vibrant culture and delicious cuisine of Punjab.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="sikkim" data-season="any">
+                <a href="sikkim.html">
+                    <img src="sikkim.png" alt="Sikkim">
+                    <h3>Sikkim</h3>
+                    <p>Enjoy the stunning landscapes and rich culture of Sikkim.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="tamilnadu" data-season="any">
+                <a href="tamilnadu.html">
+                    <img src="tamilnadu.png" alt="Tamil Nadu">
+                    <h3>Tamil Nadu</h3>
+                    <p>Explore the rich heritage and diverse landscapes of Tamil Nadu.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="tripura" data-season="any">
+                <a href="tripura.html">
+                    <img src="tripura.png" alt="Tripura">
+                    <h3>Tripura</h3>
+                    <p>Discover the unique culture and beautiful landscapes of Tripura.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="telangana" data-season="any">
+                <a href="telangana.html">
+                    <img src="telangana.png" alt="Telangana">
+                    <h3>Telangana</h3>
+                    <p>Experience the rich culture and heritage of Telangana.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="uttar" data-season="any">
+                <a href="uttar.html">
+                    <img src="uttar.png" alt="Uttar Pradesh">
+                    <h3>Uttar Pradesh</h3>
+                    <p>Visit the iconic landmarks and cultural sites of Uttar Pradesh.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="uttarakhand" data-season="any">
+                <a href="uttarakhand.html">
+                    <img src="uttarakhand.png" alt="Uttarakhand">
+                    <h3>Uttarakhand</h3>
+                    <p>Explore the beautiful hills and valleys of Uttarakhand.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="bengal" data-season="any">
+                <a href="bengal.html">
+                    <img src="bengal.png" alt="West Bengal">
+                    <h3>West Bengal</h3>
+                    <p>Experience the rich culture and history of West Bengal.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="andaman" data-season="any">
+                <a href="andaman.html">
+                    <img src="andaman.png" alt="Andaman & Nicobar">
+                    <h3>Andaman & Nicobar</h3>
+                    <p>Relax on the beautiful beaches and explore the vibrant marine life of Andaman & Nicobar.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="dadra" data-season="any">
+                <a href="dadra.html">
+                    <img src="dadra.png" alt="Dadra & Nagar Haveli">
+                    <h3>Dadra & Nagar Haveli</h3>
+                    <p>Discover the unique culture and natural beauty of Dadra & Nagar Haveli.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="daman" data-season="any">
+                <a href="daman.html">
+                    <img src="daman.jpg" alt="Daman & Diu">
+                    <h3>Daman & Diu</h3>
+                    <p>Enjoy the stunning beaches and vibrant culture of Daman & Diu.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="lakshwadeep" data-season="any">
+                <a href="lakshwadeep.html">
+                    <img src="lakshwadeep.png" alt="Lakshadweep">
+                    <h3>Lakshadweep</h3>
+                    <p>Relax on the pristine beaches and enjoy the tranquility of Lakshadweep.</p>
+                </a>
+            </div>
+
+            <div class="destination-card" data-state="puducherry" data-season="any">
+                <a href="puducherry.html">
+                    <img src="puducherry.png" alt="Puducherry">
+                    <h3>Puducherry</h3>
+                    <p>Experience the unique blend of French and Indian cultures in Puducherry.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solo Travelers -->
+    <section class="solo-travel">
+        <h2>Solo Travelers Welcome!</h2>
+        <p>Join our community of solo adventurers and explore the beauty of India.</p>
+        <button onclick="window.location.href='solo.html'">Learn More</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VacaNation. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function filterDestinations() {
+            const state = document.getElementById('state').value.toLowerCase();
+            const season = document.getElementById('season').value.toLowerCase();
+            const cards = document.querySelectorAll('.destination-card');
+
+            cards.forEach(card => {
+                const cardState = card.getAttribute('data-state');
+                const cardSeason = card.getAttribute('data-season');
+
+                if ((state === '' || cardState === state) && (season === '' || cardSeason === season || cardSeason === 'any')) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function logout() {
+            // Logout logic
+            alert("You have logged out.");
+            // Redirect to login page or perform any action
+        }
+    </script>
+</body>
+</html>

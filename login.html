@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Make My Trip</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Login to Your Account</h2>
+            
+            <!-- User login form -->
+            <form id="loginForm" onsubmit="return validateForm()">
+                <!-- Email or Phone -->
+                <div class="form-group">
+                    <label for="email">Email or Phone Number</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your email or phone" required>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <!-- Remember Me -->
+                <div class="form-group">
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                    <label for="rememberMe">Remember Me</label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Login</button>
+            </form>
+
+            <!-- Links -->
+            <div class="login-links">
+                <a href="#">Forgot Password?</a>
+                <span> | </span>
+                <a href="#">Create a New Account</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+
+</body>
+</html>

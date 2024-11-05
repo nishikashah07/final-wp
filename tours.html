@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours - VacaNation</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar .wishlist-btn {
+            background-color: #54c571;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .wishlist-btn:hover {
+            background-color: #ff9800 ;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #48a962;
+            padding-bottom: 10px;
+        }
+
+        .calendar-section, .long-weekends-section, .popular-places-section, .itinerary-section {
+    /* Ensure each section takes full width */
+    width: 100%;
+}
+
+        /* Calendar and Long Weekends Section */
+        .calendar-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .calendar, .long-weekends {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 20px;
+            border: 2px solid #48a962;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .calendar {
+            margin-right: 20px;
+        }
+
+        .calendar h3, .long-weekends h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .calendar iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .long-weekends ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .long-weekends li {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Popular Places Section */
+        .popular-places {
+            margin-bottom: 30px;
+        }
+
+        .places-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .place-card {
+            width: calc(33.33% - 20px);
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .place-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .place-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .place-info h4 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .place-info p {
+            margin: 10px 0 0 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Custom Itinerary Section */
+        .itinerary-section {
+            border: 2px solid #48a962;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .itinerary-section h3 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .itinerary-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .itinerary-form input,
+        .itinerary-form select,
+        .itinerary-form textarea,
+        .itinerary-form button {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .itinerary-form button {
+            background-color: #48a962;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .itinerary-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .wishlist-items {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+
+        .wishlist-item {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wishlist-item p {
+            margin: 0;
+            color: #333;
+        }
+
+        .remove-btn {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            background-color: #d63031;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .calendar-section {
+                flex-direction: column;
+            }
+
+            .places-grid {
+                flex-direction: column;
+            }
+
+            .place-card {
+                width: 100%;
+            }
+
+            .itinerary-form input,
+            .itinerary-form select,
+            .itinerary-form textarea,
+            .itinerary-form button {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Tours & Travel Plans</h1>
+        <button class="wishlist-btn" onclick="viewWishlist()">Wishlist</button>
+    </div>
+
+    <div class="container">
+        <!-- Calendar and Long Weekends Section -->
+        <div class="calendar-section">
+            <div class="calendar">
+                <h3>Calendar</h3>
+                <iframe src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FKolkata" frameborder="0"></iframe>
+            </div>
+            <div class="long-weekends">
+                <h3>Upcoming Long Weekends</h3>
+                <ul>
+                    <li><strong>October 2-4:</strong> Gandhi Jayanti + Weekend (3 days)</li>
+                    <li><strong>November 12-14:</strong> Diwali + Weekend (3 days)</li>
+                    <li><strong>December 25-27:</strong> Christmas + Weekend (3 days)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Popular Places Section -->
+        <div class="popular-places">
+            <h3 class="section-title">Popular Places to Visit</h3>
+            <div class="places-grid">
+                <div class="place-card">
+                    <img src="goa.png" alt="Goa">
+                    <div class="place-info">
+                        <h4>Goa</h4>
+                        <p>Known for its beautiful beaches and vibrant nightlife.</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="rajasthan.png" alt="Rajasthan">
+                    <div class="place-info">
+                        <h4>Rajasthan</h4>
+                        <p>Explore the rich culture and heritage of the desert state.</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="kerala.png" alt="Kerala">
+                    <div class="place-info">
+                        <h4>Kerala</h4>
+                        <p>Experience serene backwaters and lush greenery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Itinerary Section -->
+        <div class="itinerary-section">
+            <h3 class="section-title">Create Your Custom Itinerary</h3>
+            <form id="itinerary-form" class="itinerary-form">
+                <input type="text" id="destination" placeholder="Destination" required>
+                <input type="date" id="start-date" required>
+                <input type="date" id="end-date" required>
+                <textarea id="activities" placeholder="Enter your planned activities" required></textarea>
+                <button type="submit">Save to Wishlist</button>
+            </form>
+        </div>
+
+        <!-- Wishlist Section -->
+        <div class="wishlist-items" id="wishlist-items"></div>
+    </div>
+
+    <script>
+        document.getElementById('itinerary-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const destination = document.getElementById('destination').value;
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            const activities = document.getElementById('activities').value;
+
+            addToWishlist(destination, startDate, endDate, activities);
+
+            document.getElementById('destination').value = '';
+            document.getElementById('start-date').value = '';
+            document.getElementById('end-date').value = '';
+            document.getElementById('activities').value = '';
+        });
+
+        function addToWishlist(destination, startDate, endDate, activities) {
+            const wishlistItems = document.getElementById('wishlist-items');
+            const newItem = document.createElement('div');
+            newItem.className = 'wishlist-item';
+            newItem.innerHTML = `
+                <p><strong>${destination}</strong> (${startDate} to ${endDate})</p>
+                <p>${activities}</p>
+                <button class="remove-btn" onclick="removeWishlistItem(this)">Remove</button>
+            `;
+            wishlistItems.appendChild(newItem);
+        }
+
+        function removeWishlistItem(button) {
+            const item = button.parentElement;
+            item.remove();
+        }
+
+        function viewWishlist() {
+            const wishlistItems = document.getElementById('wishlist-items');
+            if (wishlistItems.innerHTML.trim() === '') {
+                alert('Your wishlist is empty.');
+            } else {
+                window.scrollTo({
+                    top: wishlistItems.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+</body>
+</html>

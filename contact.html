@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - VacaNation</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Welcome Section */
+        .welcome {
+            background-color: rgb(233, 230, 230);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .welcome-text h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .welcome-text p {
+            font-size: 16px;
+            animation: slideIn 2s ease-in;
+        }
+
+        /* Contact Section */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        table td {
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        table a img {
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        table a:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Form Section */
+        form {
+            margin: 20px auto;
+            max-width: 960px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #54c571; 
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #54c571;
+            box-shadow: 0 0 10px #222;
+        }
+
+        form button {
+            background-color: #54c571; 
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #54c571;
+            transform: translateY(-3px);
+        }
+
+        /* FAQ Section */
+        .faq {
+            max-width: 960px;
+            margin: 20px auto;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .faq h4 {
+            cursor: pointer;
+            background-color: #54c571; 
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq h4:hover {
+            background-color: #54c571;
+        }
+
+        .faq p {
+            display: none;
+            padding: 10px;
+            background-color: rgb(233, 230, 230); 
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>VacaNation</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <div class="container">
+            <div class="welcome-text">
+                <h3>Get in Touch with Us</h3>
+                <p>We would love to hear from you! Whether you have a question about a tour, need assistance, or just want to share your travel experience with us.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <center>
+        <table>
+            <tr>
+                <td><b>Office Address:</b></td>
+                <td>Bhakti Vedant Marg, opp. Cooper Hospital, Navpada, Suvarna Nagar, Vile Parle West, Mumbai, Maharashtra 400056</td>
+            </tr>
+            <tr>
+                <td><b>Phone Number:</b></td>
+                <td>+91 22 4235 555</td>
+            </tr>
+            <tr>
+                <td><b>Email Address:</b></td>
+                <td>info@vacanation.com</td>
+            </tr>
+            <tr>
+                <td><b>Follow Us:</b></td>
+                <td>
+                    <a href="https://www.facebook.com/VacaNationOfficial">
+                        <img src="facebook.png" alt="Facebook" width="40" height="40">
+                    </a>
+                    <a href="https://x.com/VacaNation">
+                        <img src="twitter.png" alt="Twitter" width="40" height="40">
+                    </a>
+                    <a href="https://in.linkedin.com/company/vacanation">
+                        <img src="linkedin.png" alt="LinkedIn" width="40" height="40">
+                    </a>
+                    <a href="https://www.instagram.com/nish_travelroll?igsh=bzJzMGd1dm12MHFi">
+                        <img src="instagram.png" alt="Instagram" width="40" height="40">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Hours of Operation:</b></td>
+                <td>Monday to Friday: 9:00 AM to 6:00 PM</td>
+            </tr>
+        </table>
+    </center>
+
+    <!-- Contact Form -->
+    <center>
+        <form action="/submit-message" method="POST">
+            <h3>Send Us a Message</h3>
+            <table>
+                <tr>
+                    <td><input type="text" name="name" placeholder="Your Name" required></td>
+                    <td><input type="email" name="email" placeholder="Your Email" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><textarea name="message" rows="5" cols="90" placeholder="Your Message" required></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </center>
+
+    <!-- (FAQ) -->
+    <center>
+        <h3>Frequently Asked Questions (FAQ)</h3>
+        <div class="faq">
+            <h4 onclick="toggleFaq(this)">How can I contact customer support?</h4>
+            <p>You can reach us through the contact form or call us at +91 22 4235 555.</p>
+            
+            <h4 onclick="toggleFaq(this)">What are your business hours?</h4>
+            <p>We are open Monday to Friday from 9:00 AM to 6:00 PM.</p>
+            
+            <h4 onclick="toggleFaq(this)">Where is your office located?</h4>
+            <p>Our office is located in Vile Parle West, Mumbai, Maharashtra.</p>
+        </div>
+    </center>
+
+    <!-- Map Section -->
+    <section class="map" align="center">
+        <h3>Our Location</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60319.88891183872!2d72.79593704914068!3d19.107960518186218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9b888ae67fd%3A0xe0b9538d623ac5d2!2sMukesh%20Patel%20School%20of%20Technology%20Management%20%26%20Engineering%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1725992594667!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VacaNation | All Rights Reserved | NishikaShah , MridulikaMukerji , AtharvaNaik</p>
+    </footer>
+
+    <script>
+        // Function to toggle FAQ sections
+        function toggleFaq(element) {
+            var content = element.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

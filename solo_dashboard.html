@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Traveler Dashboard - VacaNation</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #48a962;
+            padding: 15px 30px;
+            text-align: center;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .traveler-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s ease;
+        }
+
+        .traveler-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .traveler-details {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .traveler-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #48a962;
+            overflow: hidden;
+        }
+
+        .traveler-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .traveler-info {
+            text-align: left;
+        }
+
+        .traveler-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .traveler-info p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            outline: none;
+        }
+
+        .btn-connect {
+            background-color: #48a962;
+            color: white;
+        }
+
+        .btn-connect:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-message {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .btn-message:hover {
+            background-color: #48a962;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: #48a962;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .welcome-message h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .welcome-message p {
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Solo Traveler Dashboard
+    </div>
+
+    <div class="container">
+        <div class="welcome-message">
+            <h2>Welcome, Solo Travelers!</h2>
+            <p>Connect with other solo travelers, share experiences, and plan your next adventure together.</p>
+        </div>
+
+        <!-- Example Traveler Card -->
+        <div class="traveler-card">
+            <div class="traveler-details">
+                <div class="traveler-image">
+                    <img src="traveler1.jpg" alt="Traveler Profile">
+                </div>
+                <div class="traveler-info">
+                    <h3>John Doe</h3>
+                    <p>Destination: Goa</p>
+                    <p>Travel Dates: 2024-09-25 to 2024-09-30</p>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-connect" onclick="connectWithTraveler('John Doe')">Connect</button>
+                <button class="btn btn-message" onclick="sendMessage('John Doe')">Message</button>
+            </div>
+        </div>
+
+        <!-- Add more traveler cards as needed -->
+        <!-- For demonstration, you can repeat the card structure with different traveler details -->
+
+        <a href="index.html" class="back-home">← Back to Home</a>
+    </div>
+
+    <script>
+        // Function to simulate connecting with a traveler
+        function connectWithTraveler(name) {
+            alert(`You have connected with ${name}.`);
+            // Redirect to chat or connection page if needed
+            window.location.href = 'chat.html?traveler=' + encodeURIComponent(name);
+        }
+
+        // Function to simulate sending a message to a traveler
+        function sendMessage(name) {
+            alert(`You are now messaging ${name}.`);
+            // Redirect to chat page if needed
+            window.location.href = 'chat.html?traveler=' + encodeURIComponent(name);
+        }
+    </script>
+</body>
+</html>
