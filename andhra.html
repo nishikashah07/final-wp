@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Places to Visit in Andhra Pradesh - VacaNation</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            animation: fadeIn 1.5s ease-in-out;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #54c571;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            padding: 10px 15px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        /* Content */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 2.5em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .places-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        .place-card {
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .place-card:hover {
+            transform: scale(1.05);
+        }
+
+        .place-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .place-card h3 {
+            padding: 10px;
+            background-color: #54c571;
+            color: white;
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .place-card p {
+            padding: 15px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .details {
+            padding: 20px;
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px auto 0 auto;
+            text-align: left;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>VacaNation</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="solo.html">Solo Traveler?</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <div class="container">
+        <h1>Top Places to Visit in Andhra Pradesh</h1>
+
+        <!-- Places List -->
+        <div class="places-list">
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Visakhapatnam">
+                <h3>Visakhapatnam</h3>
+                <p>Known for its beautiful beaches, Visakhapatnam is a vibrant port city with a rich history.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Tirupati">
+                <h3>Tirupati</h3>
+                <p>Famous for the Tirumala Venkateswara Temple, a significant pilgrimage site attracting millions of devotees.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Araku Valley">
+                <h3>Araku Valley</h3>
+                <p>A picturesque hill station known for its coffee plantations, scenic beauty, and tribal culture.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Vijayawada">
+                <h3>Vijayawada</h3>
+                <p>A bustling city known for the Kanaka Durga Temple and its historical and cultural significance.</p>
+            </div>
+            <!-- Add more place-cards as needed -->
+        </div>
+
+        <!-- Travel and Stay Details -->
+        <div class="details">
+            <h2>Travel and Stay Options</h2>
+            <p><strong>Travel:</strong> Andhra Pradesh is well connected by rail, road, and air. Major cities like Visakhapatnam, Tirupati, and Vijayawada have airports. For local travel, taxis and auto-rickshaws are widely available.</p>
+            <p><strong>Stay:</strong> Options range from luxurious hotels to budget guesthouses. Popular areas to stay include the Beach Road in Visakhapatnam and near the temple in Tirupati.</p>
+            <p><strong>Popular Delicacies:</strong> Don't miss trying local dishes like Pulihora, Gongura Pachadi, and Andhra-style Biryani. Sweets like Pootharekulu and Bobbatlu are a must-try!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 VacaNation | All Rights Reserved | Nishika Shah, Mridulika Mukerji, Atharva Naik</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Places to Visit in Kerala - VacaNation</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            animation: fadeIn 1.5s ease-in-out;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #54c571;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            padding: 10px 15px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        /* Content */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 2.5em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .places-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        .place-card {
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .place-card:hover {
+            transform: scale(1.05);
+        }
+
+        .place-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .place-card h3 {
+            padding: 10px;
+            background-color: #54c571;
+            color: white;
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .place-card p {
+            padding: 15px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .details {
+            padding: 20px;
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px auto 0 auto;
+            text-align: left;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>VacaNation</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="solo.html">Solo Traveler?</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <div class="container">
+        <h1>Top Places to Visit in Kerala</h1>
+
+        <!-- Places List -->
+        <div class="places-list">
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Alleppey">
+                <h3>Alleppey</h3>
+                <p>Famous for its backwaters and houseboat cruises, a perfect place to relax.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Kumarakom">
+                <h3>Kumarakom</h3>
+                <p>A serene backwater destination known for its bird sanctuary and houseboats.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Kochi">
+                <h3>Kochi</h3>
+                <p>A bustling port city with a rich history and a blend of cultures, known for its Chinese fishing nets.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Munnar">
+                <h3>Munnar</h3>
+                <p>A picturesque hill station famous for its tea plantations and stunning landscapes.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Thekkady">
+                <h3>Thekkady</h3>
+                <p>Home to the Periyar National Park, ideal for wildlife enthusiasts and nature lovers.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Varkala">
+                <h3>Varkala</h3>
+                <p>Known for its stunning cliffs, beaches, and Ayurvedic health resorts.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Wayanad">
+                <h3>Wayanad</h3>
+                <p>A scenic district with lush greenery, waterfalls, and wildlife sanctuaries.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Bekal">
+                <h3>Bekal</h3>
+                <p>Famous for its historic Bekal Fort and beautiful beaches.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Thrissur">
+                <h3>Thrissur</h3>
+                <p>Known for its cultural heritage and the famous Thrissur Pooram festival.</p>
+            </div>
+            <div class="place-card">
+                <img src="https://via.placeholder.com/300x180" alt="Kollam">
+                <h3>Kollam</h3>
+                <p>A charming coastal town known for its cashew trade and backwaters.</p>
+            </div>
+        </div>
+
+        <!-- Travel and Stay Details -->
+        <div class="details">
+            <h2>Travel and Stay Options</h2>
+            <p><strong>Travel:</strong> Kerala is well connected by air, rail, and road. Kochi and Trivandrum have international airports. Local transportation includes taxis, auto-rickshaws, and boats.</p>
+            <p><strong>Stay:</strong> Options range from luxury resorts to budget homestays and guesthouses. Backwater resorts in Alleppey and Kumarakom are particularly popular.</p>
+            <p><strong>Popular Delicacies:</strong> Don't miss trying traditional Kerala dishes like Appam, Puttu, and Karimeen Pollichathu, along with sweets like Payasam and Ada Pradhaman.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 VacaNation | All Rights Reserved | Nishika Shah, Mridulika Mukerji, Atharva Naik</p>
+    </footer>
+</body>
+</html>
