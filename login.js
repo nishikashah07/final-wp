@@ -1,5 +1,3 @@
-// login.js
-
 function validateForm() {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
@@ -24,8 +22,15 @@ function validateForm() {
         },
         body: JSON.stringify({ email: email, password: password }),
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json();
+    })
     .then(data => {
+        console.log("Server response:", data); // Log server response for debugging
+
         if (data.message === "Login successful!") {
             alert("Login successful!");
             
@@ -35,7 +40,7 @@ function validateForm() {
             // Redirect to destination.html after successful login
             window.location.href = 'destination.html';
         } else {
-            alert(data.message);
+            alert(data.message || "Login failed. Please try again.");
         }
     })
     .catch(error => {
